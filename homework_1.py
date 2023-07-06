@@ -7,4 +7,4 @@ def sum_of_digits(num):
 
     return result
 
-print(sum_of_digits(235))
+print(sum_of_digits(123))
