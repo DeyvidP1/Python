@@ -1,18 +1,17 @@
 def gas_station(distance, tank_size, stations):
     result = []
-    current_position = 0
-    tank_level = tank_size
+    empty_tank = 0 + tank_size
 
-    for station in stations:
-        while station - current_position > tank_level:
-            return []
-            result.append(current_position)
-            tank_level = tank_size
+    if tank_size > distance:
+        return result
 
-        current_position = station
-
-    result.append(current_position)
+    for station_idx in range(0, len(stations) - 1):
+        if empty_tank < stations[station_idx + 1]:
+            result.append(stations[station_idx])
+        
+    result.append(stations[-1])
     return result
 
+pass
 
-print(gas_station(390, 80, [70, 90, 140, 210, 240, 280, 350]))
+print(gas_station(320, 90, [50, 80, 140, 180, 220, 290]))
